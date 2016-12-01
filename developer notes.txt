@@ -20,4 +20,9 @@ Solution:
 Issues Faced:
 1. As time calculation is done using Java API, faced issues in calling JAVA methods using Java Interoperability.
 2. Wanted to modularize the code by writing time zone calculation logic in separated method but not able to call new method after spending significant time.
-3. Error handling is not done at extensive level as need to explore the error handling techniques in Conjure.
+3. Error handling is not done at extensive level as need to explore the error handling techniques in Clojure.
+
+Improvements:
+1. Modularization of code to improve readability and scalability.
+2. Validation and better error handling.
+3. Alternate ways to improve performance. Current code is written based on my limited knowledge on Clojure.
