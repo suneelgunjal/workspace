@@ -1,0 +1,23 @@
+
+Problem statement:
+Write a web application in Clojure that when it receives a GET request at an URL like http://localhost:9999/time/[TIMEZONE] 
+answers the request with the current time in TIMEZONE as plain text or HTML
+
+Hints:
+1. Use one of the common build tools of the Clojure ecosystem: leiningen or boot.  Prefer leiningen if you know none of them.
+2. Use an embedded Jetty.  There is a very common Clojure framework for this which should be easy to find
+3. Use a routing library (again, go with the most common option which should be easy to find)
+4. Fall back to Java methods for doing the time calculations, in particular the timezone handling.  The keyword to search for is "java interop". Do not waste too much time on this.
+5. This is NOT about ClojureScript, it is about Clojure on the JVM.
+5 If you can not proceed at a point, write down what is blocking you and why.
+
+Solution:
+1. Created the new project using "compojure" template, this gives the basic skeleton required for running web application.
+2. Started the web server Jetty on 9999 port using command "lein ring server 9999"
+3. Invoke the URL "http://localhost:9999/time/[TIMEZONE]" on browser by specifying the time zone value [TIMEZONE] in full name such as "Europe-Berlin", "America-Los_Angeles", "Asia-Calcutta" etc.
+4. If time zone values is correct then server will return the current date and time in specified time zone, else return the response as "Invalid time zone"
+
+Issues Faced:
+1. As time calculation is done using Java API, faced issues in calling JAVA methods using Java Interoperability.
+2. Wanted to modularize the code by writing time zone calculation logic in separated method but not able to call new method after spending significant time.
+3. Error handling is not done at extensive level as need to explore the error handling techniques in Conjure.
